@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    >
+
+    <TextView
+        android:id="@+id/tv_music_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="歌曲标题"
+        android:textColor="#FBF7F7"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 封面图片 -->
+    <ImageView
+        android:id="@+id/cover_image"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_music_title"
+        app:srcCompat="@drawable/promise" />
+
+    <!-- 上一首按钮 -->
+    <ImageView
+        android:id="@+id/previous"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:onClick="preMusic"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/cover_image"
+        app:layout_constraintTop_toBottomOf="@+id/cover_image"
+        app:srcCompat="@android:drawable/ic_media_previous" />
+
+    <!-- 播放/暂停按钮 -->
+    <ImageView
+        android:id="@+id/playOrpause"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:onClick="playOrPause"
+        app:layout_constraintBottom_toBottomOf="@+id/previous"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toTopOf="@+id/previous"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <!-- 下一首按钮 -->
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="nextMusic"
+        app:layout_constraintBottom_toBottomOf="@+id/playOrpause"
+        app:layout_constraintEnd_toEndOf="@+id/cover_image"
+        app:layout_constraintTop_toTopOf="@+id/playOrpause"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
